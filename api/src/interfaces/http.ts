@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 export interface Request {
   body: {
     name: string;
@@ -14,4 +15,5 @@ export interface Request {
 
 export interface Response {
   send: Function;
+  status: Function
 }
