@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
 import ClassesController from './ClassesController';
-import UserController from './UserController';
+import ConnectionsController from './ConnectionsController';
 
-export { ClassesController, UserController };
+export { ClassesController, ConnectionsController };
