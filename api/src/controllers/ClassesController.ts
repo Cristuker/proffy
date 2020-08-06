@@ -54,24 +54,28 @@ class ClassesController {
 
     const timeInMinutes = convertHourToMinutes(filters.time);
 
-    const classes = await db('classes')
+    try {
+      const classes = await db('classes')
       // eslint-disable-next-line func-names
-      .whereExists(function () {
-        this.select('class_schedule.*')
-          .from('class_schedule')
-          .whereRaw('`class_schedule`.`class_id` = `classes`.`id`')
-          .whereRaw('`class_schedule`.`week_day` = ??', [Number(filters.week_day)])
-          .whereRaw('`class_schedule`.`from` <= ??', [timeInMinutes])
-          .whereRaw('`class_schedule`.`to` > ??', [timeInMinutes]);
-      })
-      .where('classes.subject', '=', filters.subject)
-      .join('users', 'classes.user_id', '=', 'users.id')
-      .select(['classes.*', 'users.*']);
+        .whereExists(function () {
+          this.select('class_schedule.*')
+            .from('class_schedule')
+            .whereRaw('`class_schedule`.`class_id` = `classes`.`id`')
+            .whereRaw('`class_schedule`.`week_day` = ??', [Number(filters.week_day)])
+            .whereRaw('`class_schedule`.`from` <= ??', [timeInMinutes])
+            .whereRaw('`class_schedule`.`to` > ??', [timeInMinutes]);
+        })
+        .where('classes.subject', '=', filters.subject)
+        .join('users', 'classes.user_id', '=', 'users.id')
+        .select(['classes.*', 'users.*']);
 
-    if (classes.length === 0) {
-      res.status(200).send(classes);
+      if (classes.length === 0) {
+        res.status(200).send(classes);
+      }
+      return res.status(201).send(classes);
+    } catch (error) {
+      return res.status(400).send({ message: 'Unexpected error while searching for classes' });
     }
-    return res.status(201).send(classes);
   }
 }
 
