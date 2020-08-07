@@ -2,31 +2,39 @@ import React from "react";
 import wppIcon from "../../assets/images/icons/whatsapp.svg";
 import "./styles.css";
 
-const TeacherItem: React.FC = () => {
+interface TeacherItem {
+    teacher: {
+        avatar: string;
+        bio: string;
+        cost: number;
+        id: number;
+        name: string;
+        subject: string;
+        user_id: number;
+        whatsapp: string;
+    };
+}
+
+const TeacherItem: React.FC<TeacherItem> = ({ teacher }) => {
     return (
         <article className="teacher-item">
             <header>
-                <img
-                    src="https://avatars1.githubusercontent.com/u/42705870?s=460&u=5c9e4e058fe388d34ac30892d74aa6b9672cfc22&v=4"
-                    alt="Avatar"
-                />
+                <img src={teacher.avatar} alt="Avatar" />
                 <div>
-                    <strong>Cristian Silva</strong>
-                    <span>Matemática</span>
+                    <strong>{teacher.name}</strong>
+                    <span>{teacher.subject}</span>
                 </div>
             </header>
-            <p>
-                Ensinando as pessoas que 2+2 = 4 <br />e 2+2/2 = 3
-            </p>
+            <p>{teacher.bio}</p>
             <footer>
                 <p>
                     Preço/hora
-                    <strong>R$ 50,00</strong>
+                    <strong>R$ {teacher.cost}</strong>
                 </p>
-                <button type="button">
+                <a target="blank" href={`https://wa.me/${teacher.whatsapp}`}>
                     <img src={wppIcon} alt="WhatsApp" />
                     Entrar em contato
-                </button>
+                </a>
             </footer>
         </article>
     );
