@@ -45,7 +45,6 @@ const TeacherList: React.FC = () => {
                     />
                     <Input name="time" label="Hora" type="time" />
                 </form>
-                <strong>51:00</strong>
             </PageHeader>
             <main>
                 <TeacherItem />

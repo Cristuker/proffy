@@ -1,4 +1,4 @@
-import Landing from "./landing/index";
+import Landing from "./Landing/index";
 import TeacherList from "./TeacherList/index";
 import TeacherForm from "./TeacherForm/index";
 
