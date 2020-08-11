@@ -1,6 +1,24 @@
+<p align="center" >
+    <img src="./docs/logo.png">
+</p>
+
 # Proffy
 
 Proffy é uma plataforma para conectar professores e alunos a aulas online, com as matérias padrões da escola.
+
+### 📸 Screenshots
+
+#### Landing Page
+
+<img src="./docs/landing.png">
+
+#### Proffy list
+
+<img src="./docs/proffys.png">
+
+#### Proffy form
+
+<img src="./docs/giveClass.png">
 
 ### 🎒 Pré-requisitos
 
@@ -11,17 +29,36 @@ Proffy é uma plataforma para conectar professores e alunos a aulas online, com 
 
 Entre na pasta do projeto e rode os seguintes comandos:
 
-1. Para instalar as depêndencias do projeto
+1. Clone o repositório
+
+```bash
+    $ git clone https://github.com/Cristuker/proffy.git
+```
+
+2. Entre na pasta do projeto
+
+```bash
+    $ cd proffy
+```
+
+3. Instale as dependências
 
 ```bash
     $ yarn
 ```
 
-2. Para começar a sua execução
+4. Rode o projeto
 
 ```bash
     $ yarn start
 ```
+
+> Não é necessário subir a api localmente pois a mesma está hospedada no heroku com a base URL no arquivo services/api.ts
+
+## 🚀 API
+
+Resolvi separar a api em outro repositório para poder fazer o deploy no Heroku sem problemas.
+<a href="https://github.com/Cristuker/proffy-api" target="blank" >Link do repositório</a>
 
 ## 📦 Tecnologias
 

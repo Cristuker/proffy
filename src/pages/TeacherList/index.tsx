@@ -38,7 +38,7 @@ const TeacherList: React.FC = () => {
             console.log(data);
             setTeachers(data);
 
-            toast.success("Busca concluida com sucesso com sucesso!", {
+            toast.success("Busca concluida com sucesso!", {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
