@@ -2,7 +2,7 @@
     <img src="./docs/logo.png">
 </p>
 
-# Proffy
+#
 
 Proffy é uma plataforma para conectar professores e alunos a aulas online, com as matérias padrões da escola.
 
@@ -58,7 +58,7 @@ Entre na pasta do projeto e rode os seguintes comandos:
 ## 🚀 API
 
 Resolvi separar a api em outro repositório para poder fazer o deploy no Heroku sem problemas.
-<a href="https://github.com/Cristuker/proffy-api" target="blank" >Link do repositório</a>
+<a href="https://github.com/Cristuker/proffy-api" target="_blank" >Link do repositório</a>
 
 ## 📦 Tecnologias
 
